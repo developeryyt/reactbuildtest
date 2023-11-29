@@ -1,0 +1,39 @@
+$color01: #039456;
+$color02: red !default;
+$color03: white;
+
+$pad01: 10px 50px 10px 20px;
+$z-indexes: (
+  'btn': 2000,
+  'dropdown': 5000,
+);
+
+$pointer: pointer;
+
+
+@function z($layer) {
+  @return map-get($z-indexes, $layer)
+};
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+.btn {
+  position: relative;
+  min-height: 40px;
+  z-index: z('dropdown');
+  padding: $pad01;
+  background: $color01 url('../imgs/icon_cart.png') no-repeat right 15px top 8px;
+  background-size: 18px 18px;
+  color: white;
+  cursor: $pointer;
+}
+
